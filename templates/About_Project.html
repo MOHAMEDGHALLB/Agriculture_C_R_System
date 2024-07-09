@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Project - Crop Recommendation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url('{{ url_for('static', filename='images/gettyimages-167805081-612x612.jpg') }}');
+
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/home">Home</a>
+        <a class='active' href="/About_Project">About Project</a>
+    </div>
+
+    <div class="container">
+        <h1>Crop Recommendation System Using Machine Learning</h1>
+        <h2>Description</h2>
+        <p>It is no secret that today we are living in one of the hottest periods in history. Climate change has led to a rise in the Earth's temperature, increasing frequency and severity of droughts, and deterioration of soil fertility, directly affecting agricultural productivity and disrupting global food chains, leaving millions hungry.</p> 
+       <p> Therefore, to address this challenge, we propose a Crop Recommendation System Using Machine Learning. This application provides recommendations for suitable crops based on various environmental and soil conditions. It aims to assist farmers and agricultural professionals in making informed decisions about crop selection, optimizing yields, and maximizing profitability.
+        The system takes into account several factors such as soil type, climate, rainfall, temperature, humidity, and pH levels to determine the most suitable crops for a given region. By analyzing historical data and using predictive models, the system provides personalized recommendations tailored to the specific conditions of a farm or agricultural area</p>
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Input Data Collection:</strong> The system allows users to input relevant data such as soil parameters, climate information, and geographic location.</li>
+            <li><strong>Data Preprocessing:</strong> The input data is preprocessed to handle missing values, normalize or scale features, and transform categorical variables.</li>
+            <li><strong>Machine Learning Models:</strong> Various machine learning algorithms are employed, including decision trees, random forests, support vector machines (SVM), and gradient boosting techniques, to build predictive models.</li>
+            <li><strong>Model Training and Evaluation:</strong> The models are trained on historical data and evaluated using appropriate performance metrics to ensure accuracy and reliability.</li>
+            <li><strong>Crop Recommendation:</strong> Based on the trained models, the system recommends the most suitable crops for the given input parameters.</li>
+            <li><strong>User-Friendly Interface:</strong> The system provides a user-friendly interface where users can easily input their data, view recommendations, and explore additional information.</li>
+        </ul>
+        
+        <h2>Technologies Used</h2>
+        <ul>
+            <li><strong>Python:</strong> Programming language used for model development, data preprocessing, and web application development.</li>
+            <li><strong>Scikit-learn:</strong> Machine learning library used for model training, evaluation, and prediction.</li>
+            <li><strong>Pandas:</strong> Data manipulation library used for data preprocessing and analysis.</li>
+            <li><strong>NumPy:</strong> Library for numerical computing used for handling arrays and mathematical operations.</li>
+            <li><strong>Flask:</strong> Web framework used for building the user interface and handling HTTP requests.</li>
+            <li><strong>HTML/CSS:</strong> Markup and styling languages used for designing the web interface.</li>
+            <li><strong>JavaScript:</strong> Scripting language used for client-side interactions and enhancing the user interface.</li>
+        </ul>
+        
+        <h2>Future Enhancements</h2>
+        <ul>
+            <li>Integration of real-time weather data to improve the accuracy of recommendations.</li>
+            <li>Incorporation of crop market prices and profitability analysis to assist farmers in making economically viable decisions.</li>
+            <li>Development of a mobile application for convenient access and usage on smartphones and tablets.</li>
+            <li>Integration of user feedback and data collection to continuously enhance the recommendation system's performance.</li>
+        </ul>
+        
+        <h2>Acknowledgements</h2>
+        <p>We would like to express our gratitude to the agricultural research community, farmers, and organizations for providing valuable insights, data, and domain knowledge that contributed to the development of this Crop Recommendation System.</p>
+        
+        <h2>Contact</h2>
+        <p>For any inquiries or questions, please contact us at <a href="https://mail.google.com/mail/u/0/#inbox">mohamedghallab68@gmail.com</a></p>
+    </div>
+</body>
+</html>

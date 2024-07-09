@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+
+    <style>
+        h1 {
+            color: rgb(182, 10, 27);
+        }
+        
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+        
+       
+        header {
+            color: rgb(42, 165, 54);
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-style: normal;
+            margin-bottom: 29px;
+            font-size: 30px;
+        }
+        
+        .container {
+            background: #edf2f7;
+            font-weight: bold;
+            margin: auto;
+            padding-bottom: 10px;
+            border-radius: 15px;
+            height: 450px;
+            width: 750px;
+        }
+        
+        .btn {
+            height: 80px;
+            position: relative;
+            border: 3px solid blue;
+        }
+        
+        .btn {
+            margin: 0;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            border: none;
+            font-size: 17px;
+            font-weight: 700;
+            background-color: #8fe58f;
+            border-radius: 21px;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        .card-text {
+            position: relative;
+            top: 170px;
+            left: 390px;
+            transform: translate(-50%, -50%);
+        }
+        .card-title{
+            position: relative;
+            top: 230px;
+            left: 20px;
+            transform: translate(-50%, -50%);
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class='active' href="/">Home</a>
+        <a href="/About_Project">About Project</a>
+
+    </div>
+
+
+
+    <!--form-->
+
+    <div class="container">
+        <header> Agricultural Crop Recommendation System </header>
+        <form action="/data" method="POST">
+            <div style="float: left; width: 48%;margin-left: 28px;  margin-bottom: 8px;">
+                <label for="Nitrogen">Nitrogen</label>
+                <input type="number" id="Nitrogen" name="Nitrogen" placeholder="Enter Nitrogen" class="form-control" required>
+            </div>
+            <div style="float: left; width: 48%;  margin-bottom: 8px;">
+                <label for="Phosporus">Phosphorus</label>
+                <input type="number" id="Phosphorus" name="Phosphorus" placeholder="Enter Phosphorus" class="form-control" required>
+            </div>
+            <div style="float: left; width: 48%;margin-left: 28px;  margin-bottom: 8px;">
+                <label for="Potassium">Potassium</label>
+                <input type="number" id="Potassium" name="Potassium" placeholder="Enter Potassium" class="form-control" required>
+            </div>
+            <div style="float: left; width: 48%;   margin-bottom: 8px;">
+                <label for="Température">temperature</label>
+                <input type="number" step="0.01" id="Température" name="Température" placeholder="Enter temperature in °C" class="form-control" required>
+            </div>
+            <div style="float: left; width: 48%;margin-left: 28px;  margin-bottom: 8px;">
+                <label for="Humidité">humidity</label>
+                <input type="number" step="0.01" id="Humidité" name="Humidité" placeholder="Enter Humidity in %" class="form-control" required>
+            </div>
+            <div style="float: left; width: 48%;  margin-bottom: 8px;">
+                <label for="ph">pH</label>
+                <input type="number" step="0.01" id="ph" name="ph" placeholder="Enter pH value" class="form-control" required>
+            </div>
+            <div style="float: left; width: 48%;margin-left: 28px;  margin-bottom: 8px;">
+                <label for="pluviométrie">rainfall</label>
+                <input type="number" step="0.01" id="pluviométrie" name="pluviométrie" placeholder="Enter Rainfall in mm" class="form-control" required>
+            </div>
+            <div style="float: left; width: 48%;  margin-bottom: 8px;">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" placeholder="Enter Date" class="form-control" required>
+            </div>
+            <div style="float: left; width: 48%;margin-left: 28px;  margin-bottom: 8px;">
+                <label for="Ville">city</label>
+                <input type="text" id="Ville" name="Ville" placeholder="Enter City" class="form-control" required>
+            </div>
+            <button type="submit" class="btn">Get Your Crop Recommendation</button>
+
+        </form>
+
+        {% if result %}
+        <div class="card bg-dark" >
+            <div class="card-body">
+                <h3 class="card-title">Recommended crops for cultivation</h3>
+                <p class="card-text">{{ result }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if message %}
+    <div id="success-message">
+        <p>{{ message }}</p>
+    </div>
+    {% endif %}
+
+    <script>
+        function showMessage() {
+            var messageElement = document.getElementById("success-message");
+            if (messageElement) {
+                messageElement.style.display = "block"; // Show the message
+                setTimeout(function() {
+                    messageElement.style.display = "none"; // Hide the message after 3 seconds
+                }, 3000);
+            }
+        }
+        window.onload = showMessage;
+    </script>
+
+</body>
+
+</html>
