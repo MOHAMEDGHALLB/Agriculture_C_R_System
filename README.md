@@ -19,7 +19,7 @@ Pandas: Data manipulation library used for data preprocessing and analysis.
 NumPy: Library for numerical computing used for handling arrays and mathematical operations.
 Flask: Web framework used for building the user interface and handling HTTP requests.
 HTML/CSS: Markup and styling languages used for designing the web interface.
-JavaScript: Scripting language used for client-side interactions and enhancing the user interface.
+
 
 # Future Enhancements
 Integration of real-time weather data to improve the accuracy of recommendations.
